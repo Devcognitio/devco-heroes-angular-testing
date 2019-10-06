@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class MessageService {
@@ -8,8 +9,33 @@ export class MessageService {
     this.messages.push(message);
   }
 
+  getFirstValue(): string{
+    return this.messages[0];
+  }
+
   clear() {
     this.messages = [];
+  }
+
+  getObservableValue(){
+    const myObservables = Observable.create((observer: Observer<string>) => {
+      setTimeout(() => {
+        observer.next('observable value')
+      }, 1000);
+
+      setTimeout(() => {
+        observer.complete();
+      }, 2000);
+    });
+    return myObservables;
+
+  }
+
+  getPromiseValue():Promise<string>{
+    let promise = new Promise<string>((resolve, reject) => {
+      resolve('promise value');     
+    });
+    return promise;
   }
 }
 
