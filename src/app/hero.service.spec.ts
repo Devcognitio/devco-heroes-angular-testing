@@ -4,6 +4,7 @@ import { Hero } from './hero';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable, Observer, throwError } from 'rxjs';
 
+// Devco Test de un cliente http
 describe('HeroService', () => {
     let httpClientSpy: { get: jasmine.Spy };
     let messageServiceSpy: jasmine.SpyObj<MessageService>;

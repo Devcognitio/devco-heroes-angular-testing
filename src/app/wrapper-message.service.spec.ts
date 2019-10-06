@@ -4,6 +4,12 @@ import { WrapperMessageService } from './wrapper-message.service';
 import { MessageService } from './message.service';
 import { stringify } from 'querystring';
 
+/* DEVCO Sin mocks (Para casos especiales).
+Con clase mock del servicio.
+Usando objeto para mockear.
+Usando Jasmine spy.
+Usando testbed
+*/
 describe('WrapperMessageService', () => {
   let service: WrapperMessageService;
 
